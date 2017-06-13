@@ -112,10 +112,8 @@ def run(filename):
 
     (name, num_frames) = first_pass(commands)
     frames = second_pass(commands, num_frames)
-    #print frames
     step = 0.1
 
-    #print symbols
 
     for f in range(num_frames):
 
@@ -126,15 +124,12 @@ def run(filename):
         zb = new_zbuffer()
         tmp = []
 
-        #Set symbol values for multiple frames
         if num_frames > 1:
             frame = frames[f]
             for knob in frame:
                 symbols[knob][1] = frame[knob]
-                #print '\tkob: ' + knob + '\tvalue: ' + str(frame[knob])
                 
         for command in commands:
-            #print command
             c = command[0]
             args = command[1:]
             knob_value = 1
